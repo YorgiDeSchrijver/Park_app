@@ -83,7 +83,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
               //Name person and image person
               const SizedBox(height: 25),
-              GestureDetector(
+              InkWell(
                 onTap: goToProfileDetailsPage,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -149,7 +149,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: Column(
                   children: [
                     // Wallet
-                    GestureDetector(
+                    InkWell(
                       onTap: goToWalletPage,
                       child: Padding(
                         padding: const EdgeInsets.all(25.0),

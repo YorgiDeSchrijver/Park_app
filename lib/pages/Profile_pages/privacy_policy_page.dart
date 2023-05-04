@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:project/components/my_profile_option.dart';
+import 'package:project/components/my_profile_option_top.dart';
 
 class privacyPolicyPage extends StatefulWidget {
   privacyPolicyPage({Key? key}) : super(key: key);
@@ -30,7 +31,7 @@ class _privacyPolicyPageState extends State<privacyPolicyPage> {
                   horizontal: 10,
                 ),
                 child: IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_back,
                     color: Colors.black87,
                   ),
@@ -39,57 +40,10 @@ class _privacyPolicyPageState extends State<privacyPolicyPage> {
                   },
                 ),
               ),
-              //Name person and image person
               const SizedBox(height: 25),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Privacy Policy',
-                          style: TextStyle(
-                            color: Colors.black87,
-                            fontSize: 24.0,
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: 1.0,
-                          ),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          'How we work',
-                          style: TextStyle(
-                            color: Colors.grey[600],
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(4),
-                        color: Colors.grey.shade200,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.15),
-                            spreadRadius: 1,
-                            blurRadius: 24,
-                            offset: Offset(0, 8),
-                          )
-                        ],
-                      ),
-                      child: Image.asset(
-                        'lib/images/logo.png',
-                        height: 60,
-                      ),
-                    ),
-                  ],
-                ),
+              const profileOptionTop(
+                headText: "Privacy Policy",
+                subText: "How we work",
               ),
               const SizedBox(height: 40.0),
               Container(
