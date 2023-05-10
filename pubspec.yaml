@@ -38,7 +38,17 @@ dependencies:
   animations: ^2.0.7
   firebase_core: ^2.10.0
   firebase_auth: ^4.4.2
+  cloud_firestore: ^4.6.0
   google_sign_in: ^6.1.0
+  google_fonts: ^4.0.4
+  flutter_native_splash: ^2.2.19
+  liquid_swipe: ^3.1.0
+  smooth_page_indicator: ^1.1.0
+  get: ^4.6.5
+  flutter_otp_text_field: ^1.1.0+2
+  flutter_snake_navigationbar: ^0.6.1
+  line_awesome_flutter: ^2.0.0
+
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +60,19 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+
+flutter_native_splash:
+  color: "#f7f6f1"
+  color_dark: "272727"
+  image: assets/images/logo.png
+  image_dark: assets/images/logo.png
+  web: false
+
+  android_12:
+    image: assets/images/logo.png
+    icon_background_color: "f7f6f1"
+    image_dark: assets/images/logo.png
+    icon_background_color_dark: "272727"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -64,7 +87,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - lib/images/
+     - assets/images/
+     - assets/images/on_boarding_images/
+     - assets/images/welcome_images/
+     - assets/images/forget_password/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -78,7 +104,7 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
-  #   - family: Schyler
+  #   - family: Syler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf

@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDUuadxzopyBBLE4VJ6ZhNpXgCKgFgXKWQ',
-    appId: '1:248263650750:android:d4a58ef83bd6b527c29def',
+    appId: '1:248263650750:android:348052d8f3a74081c29def',
     messagingSenderId: '248263650750',
     projectId: 'parking-app-b18a3',
     storageBucket: 'parking-app-b18a3.appspot.com',
@@ -63,21 +63,23 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDGCj8r4M7UzTgyxKHGxN2lnzMdvkHekro',
-    appId: '1:248263650750:ios:62d2c14eb604d6dec29def',
+    appId: '1:248263650750:ios:d48622f4aebfc9cec29def',
     messagingSenderId: '248263650750',
     projectId: 'parking-app-b18a3',
     storageBucket: 'parking-app-b18a3.appspot.com',
-    iosClientId: '248263650750-43flhb1ql59kbebigfqf91n5b5f7383u.apps.googleusercontent.com',
-    iosBundleId: 'com.example.project',
+    androidClientId: '248263650750-gib1oo479cqae14pjshgod3tcpofhctn.apps.googleusercontent.com',
+    iosClientId: '248263650750-765341681hg8bhaus7487g3j5veodggj.apps.googleusercontent.com',
+    iosBundleId: 'com.example.parkApp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyDGCj8r4M7UzTgyxKHGxN2lnzMdvkHekro',
-    appId: '1:248263650750:ios:62d2c14eb604d6dec29def',
+    appId: '1:248263650750:ios:d48622f4aebfc9cec29def',
     messagingSenderId: '248263650750',
     projectId: 'parking-app-b18a3',
     storageBucket: 'parking-app-b18a3.appspot.com',
-    iosClientId: '248263650750-43flhb1ql59kbebigfqf91n5b5f7383u.apps.googleusercontent.com',
-    iosBundleId: 'com.example.project',
+    androidClientId: '248263650750-gib1oo479cqae14pjshgod3tcpofhctn.apps.googleusercontent.com',
+    iosClientId: '248263650750-765341681hg8bhaus7487g3j5veodggj.apps.googleusercontent.com',
+    iosBundleId: 'com.example.parkApp',
   );
 }

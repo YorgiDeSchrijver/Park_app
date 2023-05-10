@@ -1,3 +1,3 @@
-# project
+# park_app
 
-Park app project
+A new Flutter project.

@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>248263650750-43flhb1ql59kbebigfqf91n5b5f7383u.apps.googleusercontent.com</string>
+	<string>248263650750-765341681hg8bhaus7487g3j5veodggj.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.248263650750-43flhb1ql59kbebigfqf91n5b5f7383u</string>
+	<string>com.googleusercontent.apps.248263650750-765341681hg8bhaus7487g3j5veodggj</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>248263650750-gib1oo479cqae14pjshgod3tcpofhctn.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDGCj8r4M7UzTgyxKHGxN2lnzMdvkHekro</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.project</string>
+	<string>com.example.parkApp</string>
 	<key>PROJECT_ID</key>
 	<string>parking-app-b18a3</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:248263650750:ios:62d2c14eb604d6dec29def</string>
+	<string>1:248263650750:ios:d48622f4aebfc9cec29def</string>
 </dict>
 </plist>
