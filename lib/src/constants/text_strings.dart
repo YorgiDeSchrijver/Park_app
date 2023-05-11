@@ -64,8 +64,8 @@ const String otpMessage = "Enter the verification code sent at ";
 const String profile = "Profile";
 const String editProfile = "Edit Profile";
 const String logoutDialogHeading = "Logout";
-const String profileHeading = "Coding with T";
-const String profileSubHeading = "superAdmin@coding.com";
+const String profileHeading = "Coding with Yorgi";
+const String profileSubHeading = "superAdmin@gmail.com";
 // -- Menu
 const String menu1 = "Settings";
 const String menu2 = "Billing Details";

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:project/src/constants/sizes.dart';
 import 'package:project/src/constants/text_strings.dart';
 import 'package:project/src/features/authentication/controllers/signup_controller.dart';
@@ -26,7 +27,7 @@ class SignUpFormWidget extends StatelessWidget {
               controller: controller.fullName,
               decoration: const InputDecoration(
                 label: Text(fullName),
-                prefixIcon: Icon(Icons.person_outline_rounded),
+                prefixIcon: Icon(LineAwesomeIcons.user),
               ),
             ),
             const SizedBox(height: formHeight - 20),
@@ -34,7 +35,7 @@ class SignUpFormWidget extends StatelessWidget {
               controller: controller.email,
               decoration: const InputDecoration(
                 label: Text(email),
-                prefixIcon: Icon(Icons.email_outlined),
+                prefixIcon: Icon(LineAwesomeIcons.envelope),
               ),
             ),
             const SizedBox(height: formHeight - 20),

@@ -32,8 +32,8 @@ class UserModel {
       id: document.id,
       email: data["Email"],
       password: data["Password"],
-      fullName: data["Phone"],
-      phoneNo: data["Password"],
+      fullName: data["FullName"],
+      phoneNo: data["Phone"],
     );
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:project/src/constants/sizes.dart';
 import 'package:project/src/constants/text_strings.dart';
+import 'package:project/src/features/authentication/controllers/login_controller.dart';
 import 'package:project/src/features/authentication/screens/forget_password/forget_password_options/forget_password_bottom_sheet.dart';
 
 class LoginForm extends StatelessWidget {
@@ -10,13 +12,17 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
+    final _formKey = GlobalKey<FormState>();
     return Form(
+      key: _formKey,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: formHeight - 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextFormField(
+              controller: controller.email,
               decoration: const InputDecoration(
                   prefixIcon: Icon(Icons.person_outline_outlined),
                   labelText: email,
@@ -25,6 +31,8 @@ class LoginForm extends StatelessWidget {
             ),
             const SizedBox(height: formHeight - 20),
             TextFormField(
+              controller: controller.password,
+              obscureText: true,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.fingerprint),
                 labelText: password,
@@ -42,12 +50,20 @@ class LoginForm extends StatelessWidget {
               child: TextButton(
                   onPressed: () {
                     ForgetPasswordScreen.buildShowModalBottomSheet(context);
-                  }, child: const Text("$forgetPassword?")),
+                  },
+                  child: const Text("$forgetPassword?")),
             ),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    LoginController.instance.loginUser(
+                      controller.email.text.trim(),
+                      controller.password.text.trim(),
+                    );
+                  }
+                },
                 child: Text(login.toUpperCase()),
               ),
             ),
