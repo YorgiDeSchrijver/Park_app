@@ -5,6 +5,7 @@ import 'package:project/src/constants/colors.dart';
 import 'package:project/src/constants/image_strings.dart';
 import 'package:project/src/constants/sizes.dart';
 import 'package:project/src/constants/text_strings.dart';
+import 'package:project/src/features/core/controllers/profile_controller.dart';
 import 'package:project/src/features/core/screens/Profile/update_profile_screen.dart';
 import 'package:project/src/features/core/screens/Profile/widgets/profile_menu_widget.dart';
 import 'package:project/src/repository/authentication_repository/authentication_repository.dart';
@@ -14,6 +15,7 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ProfileController());
     var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
@@ -112,7 +114,7 @@ class ProfilePage extends StatelessWidget {
                   icon: LineAwesomeIcons.alternate_sign_out,
                   textColor: Colors.red,
                   endIcon: false,
-                  onPress: () {}),
+                  onPress: () {controller.logout();}),
             ],
           ),
         ),

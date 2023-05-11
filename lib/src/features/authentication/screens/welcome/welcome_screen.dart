@@ -28,9 +28,9 @@ class WelcomeScreen extends StatelessWidget {
             Image(image: const AssetImage(welcomeScreenImage), height: height * 0.6),
             Column(
               children: [
-                Text(welcomeTitle, style: Theme.of(context).textTheme.headline3),
+                Text(welcomeTitle, style: Theme.of(context).textTheme.headlineLarge, textAlign: TextAlign.center,),
                 Text(welcomeSubTitle,
-                    style: Theme.of(context).textTheme.bodyText1,
+                    style: Theme.of(context).textTheme.bodyLarge,
                     textAlign: TextAlign.center),
               ],
             ),

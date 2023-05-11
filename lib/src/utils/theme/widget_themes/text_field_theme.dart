@@ -8,7 +8,6 @@ class TTextFormFieldTheme {
     prefixIconColor: secondaryColor,
     floatingLabelStyle: TextStyle(color: secondaryColor),
     focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(100),
       borderSide: BorderSide(width: 2, color: secondaryColor),
     ),
   );
@@ -18,7 +17,6 @@ class TTextFormFieldTheme {
     prefixIconColor: primaryColor,
     floatingLabelStyle: TextStyle(color: primaryColor),
     focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(100),
       borderSide: BorderSide(width: 2, color: primaryColor),
     ),
   );

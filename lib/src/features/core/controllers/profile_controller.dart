@@ -16,4 +16,8 @@ class ProfileController extends GetxController {
       Get.snackbar("Error", "Login to continue");
     }
   }
+
+  logout(){
+    _authRepo.logout();
+  }
 }
