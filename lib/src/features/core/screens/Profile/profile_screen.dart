@@ -8,7 +8,6 @@ import 'package:project/src/constants/text_strings.dart';
 import 'package:project/src/features/core/controllers/profile_controller.dart';
 import 'package:project/src/features/core/screens/Profile/update_profile_screen.dart';
 import 'package:project/src/features/core/screens/Profile/widgets/profile_menu_widget.dart';
-import 'package:project/src/repository/authentication_repository/authentication_repository.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -19,7 +18,8 @@ class ProfilePage extends StatelessWidget {
     var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
-        leading: Text(profile, style: Theme.of(context).textTheme.headlineSmall),
+
+        title: Text(profile, style: Theme.of(context).textTheme.headlineSmall, textAlign: TextAlign.center, ),
         actions: [
           IconButton(
             onPressed: () {},

@@ -38,9 +38,7 @@ class AuthenticationRepository extends GetxController {
       codeSent: (verificationId, resendToken) {
         this.verificationId.value = verificationId;
       },
-      codeAutoRetrievalTimeout: (verificationId) {
-        this.verificationId.value = verificationId;
-      },
+      codeAutoRetrievalTimeout: (verificationId) {},
       verificationFailed: (e) {
         if (e.code == 'invalid-phone-number') {
           Get.snackbar('Error', "'The provided phone number is not valid");

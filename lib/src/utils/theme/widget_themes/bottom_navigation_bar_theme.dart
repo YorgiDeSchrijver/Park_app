@@ -18,7 +18,7 @@ class TBottomNavigationBarTheme {
   );
 
   static final darkBottomNavigationBarTheme = BottomNavigationBarThemeData(
-    backgroundColor: blackColor,
+    backgroundColor: Colors.grey.shade900,
     showSelectedLabels: true,
     showUnselectedLabels: true,
     selectedItemColor: whiteColor,

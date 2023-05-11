@@ -10,8 +10,11 @@ class ProfileController extends GetxController {
 
   getUserData(){
     final email = _authRepo.firebaseUser.value?.email;
-    if(email != null){
-      return _userRepo.getUserDetails(email);
+    final phoneNo = _authRepo.firebaseUser.value?.phoneNumber;
+    if(email != null && email != ""){
+        return _userRepo.getUserDetailsOnEmail(email);
+    } else if (phoneNo != null && phoneNo != ""){
+      return _userRepo.getUserDetailsOnPhoneNo(phoneNo);
     } else{
       Get.snackbar("Error", "Login to continue");
     }
