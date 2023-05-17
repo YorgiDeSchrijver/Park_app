@@ -16,10 +16,10 @@ class Dashboard extends StatelessWidget {
     return Scaffold(
         body: Obx(() => IndexedStack(
           index: dashboardController.tabIndex.value,
-          children: const [
+          children: [
             NavigationPage(),
-            HistoryPage(),
-            ProfilePage(),
+            const HistoryPage(),
+            const ProfilePage(),
           ],
         )),
         bottomNavigationBar: BottomNavigationMenu(dashboardController: dashboardController),

@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:project/src/features/authentication/models/user_model.dart';
 import 'package:project/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:project/src/features/core/screens/dashboard/dashboard_screen.dart';
 import 'package:project/src/repository/authentication_repository/exceptions/login_email_password_failure.dart';

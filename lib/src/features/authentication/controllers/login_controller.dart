@@ -17,7 +17,6 @@ class LoginController extends GetxController {
     if(error != null) {
       Get.showSnackbar(GetSnackBar(message: error.toString(),));
     }
-
   }
 }
 

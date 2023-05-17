@@ -16,25 +16,13 @@ class SignUpController extends GetxController {
 
   final userRepo = Get.put(UserRepository());
 
-  //Call this Function from Design & it will do the rest
-  void registerUser(String email, String password, String phoneNo) {
-    String? error = AuthenticationRepository.instance
-        .createUserWithEmailAndPassword(email, password) as String?;
-    if (error != null) {
-      Get.showSnackbar(GetSnackBar(
-        message: error.toString(),
-      ));
-    }else{
-      phoneAuthentication(phoneNo);
-    }
-  }
-  void phoneAuthentication(String phoneNo) {
-    AuthenticationRepository.instance.phoneAuthentication(phoneNo);
+  void SignUpAuthentication(String email, String password) {
+    AuthenticationRepository.instance.createUserWithEmailAndPassword(email, password);
   }
 
   Future<void> createUser(UserModel user) async {
     await userRepo.createUser(user);
-    phoneAuthentication(user.phoneNo);
+    SignUpAuthentication(user.email, user.password);
     Get.to(() => const OTPScreen());
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project/src/utils/theme/widget_themes/app_bar_theme.dart';
 import 'package:project/src/utils/theme/widget_themes/bottom_navigation_bar_theme.dart';
 import 'package:project/src/utils/theme/widget_themes/elevated_button_theme.dart';
+import 'package:project/src/utils/theme/widget_themes/floating_action_button_theme.dart';
 import 'package:project/src/utils/theme/widget_themes/outlined_button_theme.dart';
 import 'package:project/src/utils/theme/widget_themes/text_field_theme.dart';
 import 'package:project/src/utils/theme/widget_themes/text_theme.dart';
@@ -18,6 +19,7 @@ class TAppTheme{
     outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
     bottomNavigationBarTheme: TBottomNavigationBarTheme.lightBottomNavigationBarTheme,
+    floatingActionButtonTheme: TFloatingActionButtomTheme.lightFloatingActionButtonTheme,
   );
 
   static final darkTheme = ThemeData(
@@ -30,5 +32,6 @@ class TAppTheme{
     outlinedButtonTheme: TOutlinedButtonTheme.darkOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme,
     bottomNavigationBarTheme: TBottomNavigationBarTheme.darkBottomNavigationBarTheme,
+    floatingActionButtonTheme: TFloatingActionButtomTheme.darkFloatingActionButtomTheme
   );
 }

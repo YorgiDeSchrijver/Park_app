@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:location/location.dart';
 import 'package:project/src/features/authentication/models/user_model.dart';
 
 class UserRepository extends GetxController {
@@ -43,5 +44,29 @@ class UserRepository extends GetxController {
     final snapshot = await _db.collection("Users").where("Phone", isEqualTo: phoneNo).get();
     final userData = snapshot.docs.map((e) => UserModel.fromSnapshot(e)).single;
     return userData;
+  }
+
+  Future<LocationData?> currentLocation() async {
+    bool serviceEnabled;
+    PermissionStatus permissionGranted;
+
+    Location location = new Location();
+
+    serviceEnabled = await location.serviceEnabled();
+    if (!serviceEnabled) {
+      serviceEnabled = await location.requestService();
+      if (!serviceEnabled) {
+        return null;
+      }
+    }
+
+    permissionGranted = await location.hasPermission();
+    if (permissionGranted == PermissionStatus.denied) {
+      permissionGranted = await location.requestPermission();
+      if (permissionGranted != PermissionStatus.granted) {
+        return null;
+      }
+    }
+    return await location.getLocation();
   }
 }
