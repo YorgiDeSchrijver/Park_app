@@ -4,6 +4,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:project/src/features/core/controllers/navigation_controller.dart';
 import 'package:project/src/features/core/screens/Navigation/widgets/navigation_map_widget.dart';
 import 'package:project/src/features/core/screens/Navigation/widgets/navigation_search_bar_widget.dart';
+import 'package:project/src/features/core/screens/Navigation_filter/navigation_filter_screen.dart';
 
 class NavigationPage extends StatelessWidget {
   NavigationPage({super.key});

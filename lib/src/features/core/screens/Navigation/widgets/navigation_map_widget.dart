@@ -5,6 +5,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:location/location.dart';
 import 'package:project/src/features/core/controllers/navigation_controller.dart';
 import 'package:project/src/features/core/models/parking_spot_model.dart';
+import 'package:project/src/features/core/screens/Navigation/parking_spot/parking_spot_detail/parking_spot_detail_bottom_sheet.dart';
 import 'package:syncfusion_flutter_maps/maps.dart';
 
 class NavigationMapWidget extends StatefulWidget {
@@ -55,16 +56,7 @@ class _NavigationMapWidgetState extends State<NavigationMapWidget> {
                     child: InkWell(
                       onTap: () {
                         navigationController.selectMarker(index);
-
-                        // Show the bottom sheet here
-                        showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            return Container(
-                                // Add your desired content for the bottom sheet
-                                );
-                          },
-                        );
+                        ParkingSpotDetailScreen.buildShowModalBottomSheet(context, locations[index]);
                       },
                       child: AnimatedContainer(
                         duration: const Duration(milliseconds: 250),

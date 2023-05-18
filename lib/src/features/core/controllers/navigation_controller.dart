@@ -17,7 +17,12 @@ class NavigationController extends GetxController {
     super.onInit();
     loadParkingSpots();
     zoomPanBehavior.value = MapZoomPanBehavior(
-      focalLatLng: MapLatLng(51, 4.5),
+      focalLatLng: parkingSpots.length > 0
+          ? MapLatLng(
+              parkingSpots[0].latitude,
+              parkingSpots[0].longitude,
+            )
+          : MapLatLng( 51.280526, 4.413976),
       minZoomLevel: 3,
       maxZoomLevel: 20,
       zoomLevel: 14,
@@ -35,13 +40,14 @@ class NavigationController extends GetxController {
 
   Future<void> setFocalLatLng(MapLatLng focalLatLng) async {
     zoomPanBehavior.value.focalLatLng = focalLatLng;
+    zoomPanBehavior.value.zoomLevel = 15;
   }
 
   Future<void> selectMarker(int index) async {
     selectedMarkerIndex.value = index;
     final locations = parkingSpots.value;
     final focalLatLng = MapLatLng(
-      locations[selectedMarkerIndex.value].latitude,
+      locations[selectedMarkerIndex.value].latitude - 0.005,
       locations[selectedMarkerIndex.value].longitude,
     );
     setFocalLatLng(focalLatLng);

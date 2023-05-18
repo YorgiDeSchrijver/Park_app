@@ -76,3 +76,9 @@ const String menu5 = "Logout";
 const String delete = "Delete";
 const String joined = "Joined";
 const String joinedAt = "31 October 2022";
+
+//Parking Spot Detail text
+const String workingHours = "Working Hours";
+const String info = "Info";
+const String faculties = "Faculties";
+const String bookSpot = "Book Spot";
