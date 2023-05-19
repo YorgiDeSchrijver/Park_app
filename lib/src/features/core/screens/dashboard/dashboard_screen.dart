@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:project/src/features/core/controllers/dashboard_controller.dart';
 import 'package:project/src/features/core/screens/History/history_screen.dart';
 import 'package:project/src/features/core/screens/Navigation/navigation_screen.dart';
+import 'package:project/src/features/core/screens/New_Parking_Spot/New_Parking_spot_screen.dart';
 import 'package:project/src/features/core/screens/Profile/profile_screen.dart';
 import 'package:project/src/features/core/screens/dashboard/widgets/bottom_navigation_menu_widget.dart';
 
@@ -18,6 +19,7 @@ class Dashboard extends StatelessWidget {
           index: dashboardController.tabIndex.value,
           children: [
             NavigationPage(),
+            const NewParkingSpotPage(),
             const HistoryPage(),
             const ProfilePage(),
           ],

@@ -82,3 +82,13 @@ const String workingHours = "Working Hours";
 const String info = "Info";
 const String faculties = "Faculties";
 const String bookSpot = "Book Spot";
+
+
+//Add Parking spot Text
+const String title = "Title";
+const String location = "Location";
+const String numberOfSpots = "Number of Parking spots";
+const String price = "Price per hour";
+const String addParkingSpot = "Add a new parking spot";
+const String startHour = "Opening Time";
+const String endHour = "Closing Time";

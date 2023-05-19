@@ -57,6 +57,7 @@ dependencies:
   location: ^4.4.0
   syncfusion_flutter_maps: ^21.2.4
   intl: ^0.18.1
+  geocoding: ^2.1.0
 
 
 dev_dependencies:

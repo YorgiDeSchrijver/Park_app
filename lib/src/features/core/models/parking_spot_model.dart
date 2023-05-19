@@ -7,14 +7,16 @@ class ParkingSpotModel {
   final String? id;
   final String title;
   final String location;
-  final int numberOfSpots;
-  final double price;
+  final String numberOfSpots;
+  final String price;
   final String startHour;
   final String endHour;
   final latitude;
   final longitude;
-  final List<String> selectedFacilities;
+  final List<dynamic> selectedFacilities;
+  final List<dynamic> paymentMethods;
 
+  static 
   List<String> facilityTypes = [
     'Covered Roof',
     'Camera',
@@ -36,8 +38,24 @@ class ParkingSpotModel {
     required this.price,
     required this.startHour,
     required this.endHour,
-    required this.selectedFacilities
+    required this.selectedFacilities,
+    required this.paymentMethods,
   });
+
+  toJson(){
+    return {
+      "Title": title,
+      "Location": location,
+      "NumberOfSpots": numberOfSpots,
+      "Price": price,
+      "StartHour": startHour,
+      "EndHour": endHour,
+      "SelectedFacilities": selectedFacilities,
+      "PaymentMethods": paymentMethods,
+      "Latitude": latitude,
+      "Longitude": longitude,
+    };
+  }
 
   factory ParkingSpotModel.fromSnapshot(
       DocumentSnapshot<Map<String, dynamic>> document) {
@@ -46,19 +64,14 @@ class ParkingSpotModel {
       id: document.id,
       latitude: data["Latitude"],
       longitude: data["Longitude"],
-      title: "LawnField Parks",
-      location: "1024, Lawnfield Road, New york",
-      numberOfSpots: 1,
-      price: 3.00,
-      startHour: DateFormat.jm().format(DateFormat("hh:mm:ss").parse("08:00:00")),
-      endHour: DateFormat.jm().format(DateFormat("hh:mm:ss").parse("23:00:00")),
-      selectedFacilities: [
-        'Covered Roof',
-        'Camera',
-        'Overnight',
-        'Charging',
-        'Disabled Parking',
-      ],
+      title: data["Title"],
+      location: data["Location"],
+      numberOfSpots: data["NumberOfSpots"],
+      price: data["Price"],
+      startHour: data["StartHour"],
+      endHour: data["EndHour"],
+      selectedFacilities: data["SelectedFacilities"],
+      paymentMethods: data["PaymentMethods"],
     );
   }
 }

@@ -12,7 +12,8 @@ class NavigationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: (){}, child: Icon(Icons.location_on)),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {}, child: Icon(Icons.location_on)),
       body: Stack(
         children: [
           NavigationMapWidget(),
@@ -22,4 +23,3 @@ class NavigationPage extends StatelessWidget {
     );
   }
 }
-

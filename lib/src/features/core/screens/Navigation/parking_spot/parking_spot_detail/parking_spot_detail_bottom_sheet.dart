@@ -64,7 +64,7 @@ class ParkingSpotDetailScreen {
                         color: accentColor.withOpacity(0.7),
                       ),
                       const SizedBox(width: 7.5),
-                      Text("\$3.00/h",
+                      Text("\$${parkingSpot.price}/h",
                           style: Theme.of(context).textTheme.bodyMedium),
                     ],
                   ),

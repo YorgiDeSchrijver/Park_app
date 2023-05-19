@@ -33,7 +33,7 @@ class NavigationSearchBarWidget extends StatelessWidget {
                 child: Container(
                   child: Card(
                     child: IconButton(
-                      onPressed: () {Get.to(NavigationFilterPage());},
+                      onPressed: () {Get.to(() => NavigationFilterPage());},
                       icon: Icon(LineAwesomeIcons.horizontal_sliders),
                     ),
                   ),

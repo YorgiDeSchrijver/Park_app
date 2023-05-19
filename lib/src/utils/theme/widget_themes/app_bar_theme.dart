@@ -7,6 +7,7 @@ class TAppBarTheme {
     actionsIconTheme: IconThemeData(color: Colors.black87),
     centerTitle: true,
     elevation: 0,
+    foregroundColor: Colors.black54,
   );
 
   static final darkAppBarTheme = AppBarTheme(
@@ -14,5 +15,6 @@ class TAppBarTheme {
     actionsIconTheme: IconThemeData(color: Colors.white),
     centerTitle: true,
     elevation: 0,
+    foregroundColor: Colors.white,
   );
 }

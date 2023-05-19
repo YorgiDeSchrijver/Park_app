@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project/src/features/core/models/parking_spot_model.dart';
 import 'package:project/src/repository/navigation_repository/navigation_repository.dart';
@@ -9,6 +10,10 @@ class NavigationController extends GetxController {
   final zoomPanBehavior = MapZoomPanBehavior().obs;
   final mapController = MapTileLayerController();
   final selectedMarkerIndex = RxInt(0);
+
+  final RxList<String> selectedFacilities = <String>[].obs;
+  final RxList<String> selectedPaymentMethods = <String>[].obs;
+  final Rx<RangeValues> priceRange = RangeValues(0, 15).obs;
 
   final navigationRepo = Get.put(NavigationRepository());
 
@@ -51,5 +56,25 @@ class NavigationController extends GetxController {
       locations[selectedMarkerIndex.value].longitude,
     );
     setFocalLatLng(focalLatLng);
+  }
+
+  void toggleFacility(String facilityType){
+    if (selectedFacilities.contains(facilityType)) {
+      selectedFacilities.remove(facilityType);
+    } else {
+      selectedFacilities.add(facilityType);
+    }
+  }
+
+  void togglePayment(String paymentMethod){
+    if (selectedPaymentMethods.contains(paymentMethod)) {
+      selectedPaymentMethods.remove(paymentMethod);
+    } else {
+      selectedPaymentMethods.add(paymentMethod);
+    }
+  }
+
+  Future<void> filterParkingSpots() async{
+    parkingSpots.value = await navigationRepo.filterParkingSpots(priceRange.value, selectedFacilities, selectedPaymentMethods);
   }
 }

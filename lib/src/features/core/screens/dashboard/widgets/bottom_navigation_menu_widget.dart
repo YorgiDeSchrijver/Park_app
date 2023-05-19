@@ -25,6 +25,10 @@ class BottomNavigationMenu extends StatelessWidget {
               label: 'Home',
             ),
             BottomNavigationBarItem(
+              icon: Icon(Icons.add_location_alt_outlined),
+              label: 'Add Spot',
+            ),
+            BottomNavigationBarItem(
               icon: Icon(Icons.update),
               label: 'History',
             ),
