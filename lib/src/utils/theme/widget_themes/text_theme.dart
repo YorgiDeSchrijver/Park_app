@@ -15,7 +15,7 @@ class TTextTheme {
     headlineMedium: GoogleFonts.montserrat(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
     headlineSmall: GoogleFonts.montserrat(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
     bodyLarge: GoogleFonts.poppins(color: Colors.white60 , fontWeight: FontWeight.w600),
-    bodyMedium: GoogleFonts.poppins(color: Colors.white),
+    bodyMedium: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.w500),
   );
 }
 

@@ -54,10 +54,11 @@ dependencies:
   tuple: ^2.0.1
   positioned_tap_detector_2: ^1.0.4
   latlong2: ^0.8.1
-  location: ^4.4.0
-  syncfusion_flutter_maps: ^21.2.4
   intl: ^0.18.1
   geocoding: ^2.1.0
+  permission_handler: ^10.2.0
+  syncfusion_flutter_maps: '21.2.4'
+  location: ^4.4.0
 
 
 dev_dependencies:

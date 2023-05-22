@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project/src/features/core/controllers/navigation_controller.dart';
-import 'package:project/src/features/core/screens/Navigation_filter/widgets/navigation_filter_payment_widget.dart';
+import 'package:project/src/features/core/Navigation/controllers/navigation_controller.dart';
+import 'package:project/src/features/core/Navigation/screens/Navigation_filter/widgets/navigation_filter_payment_widget.dart';
 
 class PaymentTypesWidget extends StatelessWidget {
   const PaymentTypesWidget({

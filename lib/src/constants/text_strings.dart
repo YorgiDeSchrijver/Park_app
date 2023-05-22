@@ -8,6 +8,7 @@ const String password = "Password";
 const String phoneNo = "Phone No";
 const String fullName = "Full Name";
 const String next = "Next";
+const String save = "Save";
 
 
 // -- On Boarding Text
@@ -69,13 +70,19 @@ const String profileSubHeading = "superAdmin@gmail.com";
 // -- Menu
 const String menu1 = "Settings";
 const String menu2 = "Billing Details";
-const String menu3 = "User Management";
+const String menu3 = "My vehicles";
 const String menu4 = "Information";
 const String menu5 = "Logout";
 // -- Update Profile Screen Text
 const String delete = "Delete";
 const String joined = "Joined";
 const String joinedAt = "31 October 2022";
+// -- My Vehicles Text
+
+// -- Add Vehicle Text
+const String addVehicle = "Add Vehicle";
+const String vehicleName = "Vehicle name";
+const String vehicleRegNumber = "Vehicle Reg. Number";
 
 //Parking Spot Detail text
 const String workingHours = "Working Hours";
@@ -92,3 +99,5 @@ const String price = "Price per hour";
 const String addParkingSpot = "Add a new parking spot";
 const String startHour = "Opening Time";
 const String endHour = "Closing Time";
+
+

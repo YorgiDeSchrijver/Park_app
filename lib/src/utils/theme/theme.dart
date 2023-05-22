@@ -10,7 +10,7 @@ import 'package:project/src/utils/theme/widget_themes/text_theme.dart';
 class TAppTheme{
 
   static final lightTheme = ThemeData(
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: Colors.blue[50],
     primarySwatch: Colors.blue,
     brightness: Brightness.light,
     textTheme: TTextTheme.lightTextTheme,

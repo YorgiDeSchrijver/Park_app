@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project/src/features/core/controllers/navigation_controller.dart';
-import 'package:project/src/features/core/models/parking_spot_model.dart';
+import 'package:project/src/features/core/Navigation/controllers/navigation_controller.dart';
+import 'package:project/src/features/core/Navigation/models/parking_spot_model.dart';
 
 class FacilityTypesWidget extends StatelessWidget {
   const FacilityTypesWidget({

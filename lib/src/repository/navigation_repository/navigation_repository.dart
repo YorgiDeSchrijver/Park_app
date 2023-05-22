@@ -1,18 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project/src/features/core/models/parking_spot_model.dart';
+import 'package:project/src/features/core/Navigation/models/parking_spot_model.dart';
 
 class NavigationRepository extends GetxController {
   static NavigationRepository get instance => Get.find();
 
   final _db = FirebaseFirestore.instance;
 
-  Future<List<ParkingSpotModel>> getAllParkingSpots() async {
-    final snapshot = await _db.collection("Markers").get();
-    final parkingSpotsData =
-        snapshot.docs.map((e) => ParkingSpotModel.fromSnapshot(e)).toList();
-    return parkingSpotsData;
+  Stream<List<ParkingSpotModel>> getParkingSpots() {
+    return _db.collection('Markers').snapshots().map((snapshot) {
+      return snapshot.docs
+          .map((doc) => ParkingSpotModel.fromSnapshot(doc))
+          .toList();
+    });
   }
 
   Future<List<ParkingSpotModel>> filterParkingSpots(
@@ -27,12 +28,14 @@ class NavigationRepository extends GetxController {
         .where("selectedPaymentMethods",
             arrayContainsAny: selectedPaymentMethods)
         .get();
-    final parkingSpotsData = snapshot.docs.map((e) => ParkingSpotModel.fromSnapshot(e)).toList();
+    final parkingSpotsData =
+        snapshot.docs.map((e) => ParkingSpotModel.fromSnapshot(e)).toList();
     return parkingSpotsData;
   }
 
-  createNewParkingSpot(ParkingSpotModel parkingSpot) async{
-    await _db.collection("Markers")
+  createNewParkingSpot(ParkingSpotModel parkingSpot) async {
+    await _db
+        .collection("Markers")
         .add(parkingSpot.toJson())
         .whenComplete(
           () => Get.snackbar(
