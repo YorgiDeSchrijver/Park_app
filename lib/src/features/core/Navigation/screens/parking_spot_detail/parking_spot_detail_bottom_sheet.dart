@@ -5,14 +5,19 @@ import 'package:project/src/constants/colors.dart';
 import 'package:project/src/constants/sizes.dart';
 import 'package:project/src/constants/text_strings.dart';
 import 'package:project/src/features/core/Navigation/models/parking_spot_model.dart';
-import 'package:project/src/features/core/Navigation/screens/parking_spot_detail/parking_spot_booking.dart';
+import 'package:project/src/features/core/Navigation/screens/parking_spot_booking/parking_spot_booking_page.dart';
+import 'package:project/src/features/core/Profile/controllers/profile_vechicle_controller.dart';
 
 class ParkingSpotDetailScreen {
   static Future<dynamic> buildShowModalBottomSheet(
       BuildContext context, ParkingSpotModel parkingSpot) {
+    final controller = Get.put(ProfileVehicleController());
     return showModalBottomSheet(
       context: context,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(defaultSize), topRight: Radius.circular(defaultSize))),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(defaultSize),
+              topRight: Radius.circular(defaultSize))),
       builder: (context) => Container(
         padding: const EdgeInsets.all(defaultSize),
         child: Column(
@@ -121,7 +126,13 @@ class ParkingSpotDetailScreen {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {Get.to(ParkingSpotBookingPage(parkingSpot: parkingSpot));},
+                onPressed: () {
+                  controller.fetchUserVehicles();
+
+                  if (controller.userVehicles.isNotEmpty) {
+                    Get.to(ParkingSpotBookingPage(parkingSpot: parkingSpot, profileVehicleController: controller));
+                  }
+                },
                 child: Text(bookSpot.toUpperCase()),
               ),
             ),

@@ -15,6 +15,8 @@ class ProfileVehicleController extends GetxController {
 
   RxList<VehicleModel> userVehicles = RxList<VehicleModel>([]);
 
+  late Rxn<VehicleModel> selectedVehicle = Rxn<VehicleModel>();
+
   @override
   void onInit(){
     super.onInit();
@@ -35,11 +37,16 @@ class ProfileVehicleController extends GetxController {
 
   Future<void> addVehicle(VehicleModel vehicle) async{
     await _userRepo.addVehicle(vehicle);
+    userVehicles.add(vehicle);
+    selectedVehicle.value = vehicle;
   }
 
   Future<void> fetchUserVehicles() async {
     final vehicles = await _userRepo.getUserVehicles();
     userVehicles.assignAll(vehicles);
+    if(vehicles.isNotEmpty){
+      selectedVehicle.value = vehicles[0];
+    }
   }
 
   void clear(){
@@ -48,5 +55,7 @@ class ProfileVehicleController extends GetxController {
     vehicleRegNumber.clear();
   }
 
-
+  void onVehicleSelected(VehicleModel vehicle) {
+    selectedVehicle.value = vehicle;
+  }
 }

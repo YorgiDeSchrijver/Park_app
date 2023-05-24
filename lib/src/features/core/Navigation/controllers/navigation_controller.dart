@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:location/location.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:project/src/features/core/Navigation/models/hour_model.dart';
 import 'package:project/src/features/core/Navigation/models/parking_spot_model.dart';
+import 'package:project/src/features/core/Profile/models/vehicle_model.dart';
 import 'package:project/src/repository/navigation_repository/navigation_repository.dart';
 import 'package:project/src/repository/user_repository/user_repository.dart';
 import 'package:syncfusion_flutter_maps/maps.dart';
@@ -26,6 +28,8 @@ class NavigationController extends GetxController {
   MapLatLng? currentLocation;
 
   final isActive = RxBool(false);
+
+  final RxInt selectedHourIndex = RxInt(-1);
 
   final List<String> hourNames = [
     "30 min",
@@ -113,6 +117,12 @@ class NavigationController extends GetxController {
     });
   }
 
+  String getCurrentTime() {
+    DateTime now = DateTime.now();
+    String formattedTime = DateFormat.Hm().format(now);
+    return formattedTime;
+  }
+
   /*void ListenToLocation() {
     location.onLocationChanged.listen((LocationData currentLocation) {
       this.currentLocation = MapLatLng(
@@ -141,6 +151,10 @@ class NavigationController extends GetxController {
       );
 
       hourModels.add(hourModel);
+    }
+
+    if (selectedHourIndex.value == -1 && hourModels.isNotEmpty) {
+      selectedHourIndex.value = 0;
     }
 
     return hourModels;
